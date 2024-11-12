@@ -16,15 +16,11 @@ public class Main {
         try {
             tx.begin();
 
-            Member member = new Member();
-            member.setId(1L);
-            member.setName("hello");
+            // 비영속
+            Member member = new Member(1L, "test");
             em.persist(member);
+            em.flush();
 
-            Member findMember = em.find(Member.class, 1L);
-            findMember.setName("HelloJPA");
-
-            tx.commit();
         } catch (Exception e) {
             tx.rollback();
         } finally {
