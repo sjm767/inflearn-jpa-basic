@@ -5,8 +5,10 @@
 
     <!-- EntityManagerFactory 생성 시 unit name과 일치해야 합니다 -->
     <persistence-unit name="hello">
-        <class>org.entity.Member</class>
-        <class>org.entity.Team</class>
+        <class>jpashop.domain.Member</class>
+        <class>jpashop.domain.Item</class>
+        <class>jpashop.domain.Order</class>
+        <class>jpashop.domain.OrderItem</class>
         <properties>
             <!-- 필수 속성 -->
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>

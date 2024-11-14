@@ -1,7 +1,3 @@
-package org.example;
-
-import org.entity.Member;
-import org.entity.Team;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -13,25 +9,8 @@ public class Main {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("hello");
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
-
+        tx.begin();
         try {
-            tx.begin();
-
-            Team team = new Team();
-            team.setName("TEAM A");
-            em.persist(team);
-
-            Member member = new Member();
-            member.setUsername("member1");
-            member.changeTeam(team);
-
-            em.persist(member);
-
-            em.flush();
-            em.clear();
-
-            Team findTeam = em.find(Team.class, team.getId());
-            findTeam.getMembers().forEach(System.out::println);
 
             tx.commit();
         } catch (Exception e) {
