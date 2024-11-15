@@ -7,6 +7,9 @@
     <persistence-unit name="hello">
         <class>org.entity.Member</class>
         <class>org.entity.Team</class>
+        <class>org.entity.Product</class>
+        <class>org.entity.Locker</class>
+        <class>org.entity.MemberProduct</class>
         <properties>
             <!-- 필수 속성 -->
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
