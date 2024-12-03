@@ -1,11 +1,14 @@
 package org.entity;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Product {
+public class Parent {
 
     @Id
     @GeneratedValue
@@ -13,11 +16,12 @@ public class Product {
 
     private String name;
 
-    @OneToMany(mappedBy = "product")
-    private List<MemberProduct> memberProducts = new ArrayList<>();
+    @OneToMany(mappedBy = "parent")
+    private List<Child> childList = new ArrayList<>();
 
-
-    public Product() {
+    public void addChild(Child child) {
+        childList.add(child);
+        child.setParent(this);
     }
 
     public Long getId() {

@@ -1,3 +1,4 @@
+import jpashop.domain.Book;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -11,6 +12,11 @@ public class Main {
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         try {
+            Book book = new Book();
+            book.setName("JPA");
+            book.setAuthor("심재민");
+
+            em.persist(book);
 
             tx.commit();
         } catch (Exception e) {

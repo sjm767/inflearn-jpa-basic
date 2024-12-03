@@ -10,6 +10,10 @@
         <class>org.entity.Product</class>
         <class>org.entity.Locker</class>
         <class>org.entity.MemberProduct</class>
+        <class>org.inheritance.Item</class>
+        <class>org.inheritance.Album</class>
+        <class>org.inheritance.Book</class>
+        <class>org.inheritance.Movie</class>
         <properties>
             <!-- 필수 속성 -->
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
