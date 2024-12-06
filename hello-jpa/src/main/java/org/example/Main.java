@@ -1,7 +1,5 @@
 package org.example;
 
-import org.mappedsuperclass.Member;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -15,12 +13,6 @@ public class Main {
 
         try {
             tx.begin();
-
-            Member member = new Member();
-            member.setName("name");
-
-            em.persist(member);
-
 
             tx.commit();
         } catch (Exception e) {
